@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-md-6">
+                <div class="card card-bordered">
+                    <div class="card-header">
+                        <h4 class="card-title"><strong>AcroBot</strong></h4>
+                    </div>
+                    <div class="ps-container ps-theme-default ps-active-y" id="chat-content" style="overflow-y: scroll !important; height:500px !important;">
+                        <ul class="chat-list">
+                            {% for msg in user_messages %}
+                            {% if request.user == msg.user %}
+                            <li class="in">
+                                <div class="chat-img">
+                                    <img alt="Avtar" src="{% static 'img/icon.jpg' %}">
+                                </div>
+                                <div class="chat-body">
+                                    <div class="chat-message">
+                                        <h5>Acro</h5>
+                                        <p>{{ msg.res }}</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="out">
+                                <div class="chat-img">
+                                    <img alt="Avtar" src="{{ request.user.avatar.url }}">
+                                </div>
+                                <div class="chat-body">
+                                    <div class="chat-message">
+                                        <h5>{{ request.user.username }}</h5>
+                                        <p>{{ msg.body }}</p>
+                                    </div>
+                                </div>
+                            </li>
+                            {% else %}
+                            
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                        <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;">
+                            <div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                        </div>
+                        <div class="ps-scrollbar-y-rail" style="top: 0px; height: 0px; right: 2px;">
+                            <div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 2px;"></div>
+                        </div>
+                    </div>
+                    <div class="publisher bt-1 border-light"> <img class="avatar avatar-xs" src="{{ request.user.avatar.url }}" alt="..."> 
+                        <form class="form" action="" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                        <input class="publisher-input" type="text" name="msg" placeholder="Write something"><button class="publisher-btn" type="submit"><i class="fa fa-paper-plane"></i></button> </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
