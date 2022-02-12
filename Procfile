@@ -1,1 +1,1 @@
-web: gunicorn AcroBot.wsgi --log-file--
+web: gunicorn AcroBot.wsgi
