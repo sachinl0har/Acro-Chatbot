@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="profile-page">
+  <div class="container">
+    <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+        <div class="card p-4">
+            <div class="about-img d-flex flex-column justify-content-center align-items-center"> <img src="{{ user.avatar.url }}" /> <span class="name mt-3">{{ user.name }}</span> <span class="idd">@{{ user.username }}</span>
+                <div class=" d-flex mt-2"> <a href="{% url 'update-user' %}" class="px-btn theme-t">Edit Profile</a> </div>
+                <div class="text mt-3"> <span>{{ user.bio }}</span> </div>
+                <div class=" px-2 rounded mt-4 date "> <span class="join">Joined {{ user.date_joined|date:"d M Y" }}</span> </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</main>
+{% endblock content %}
