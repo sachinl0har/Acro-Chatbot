@@ -1,5 +1,10 @@
 # Acro-Chatbot
 
+### __Remember while registering__
+> __Password Should be of more than 8 Characters__
+> __Password Should Contain Atleast 1 Uppercase letter, 1 Lowercase letter and 1 Number__
+> __Password Should Contain Atleast 1 Symbol__
+
 ## Home Page
 ![image](https://user-images.githubusercontent.com/69034411/153741070-f8f5df07-424b-4378-9a49-859a91c75c59.png)
 
