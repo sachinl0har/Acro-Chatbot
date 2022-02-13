@@ -55,6 +55,10 @@ body {
   min-height: 100vh;
 }
 
+img {
+  width: 100%;
+}
+
 a {
   display: inline-block;
   color: var(--color-main);
