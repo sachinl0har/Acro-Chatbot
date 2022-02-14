@@ -55,9 +55,6 @@ body {
   min-height: 100vh;
 }
 
-img {
-  width: 100%;
-}
 
 a {
   display: inline-block;
@@ -1089,6 +1086,10 @@ section {
 .about-list p {
   margin: 0;
   font-size: 15px;
+}
+
+.about-img img {
+  width: 100%;
 }
 
 .about-img {
